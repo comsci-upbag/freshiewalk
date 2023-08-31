@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 
 	let scanning = false;
-	let stopScanning = () => {};
+	let stopScanning = () => void {};
 
 	const startScanning = () => {
 		let scanner = new Html5Qrcode('reader');
