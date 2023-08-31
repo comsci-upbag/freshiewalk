@@ -26,7 +26,8 @@
 <style>
 	.container {
 		transition: all 0.5s;
-		width: 90vw;
+		width: 360px;
+		height: 400px;
 		position: absolute;
 		top: calc(100% - 50px);
 		display: inline-flex;
@@ -54,7 +55,7 @@
 	}
 
 	.container:hover {
-		top: 30vh;
+		top: calc(100vh - 380px);
 	}
 
 	.cards {

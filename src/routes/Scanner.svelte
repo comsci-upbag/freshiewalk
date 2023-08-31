@@ -11,6 +11,7 @@
 			.start(
 				{ facingMode: 'environment' },
 				{
+					aspectRatio: 1,
 					fps: 10,
 					qrbox: { width: 250, height: 250 }
 				},
@@ -37,7 +38,17 @@
 </script>
 
 <div class="container">
-	<div id="reader" />
+	<div id="reader">
+		{#if !scanning}
+			<div class="instructions">
+				<h1>Please allow camera permissions to be able to scan QR codes!</h1>
+				<p>
+					Reset the site settings if you have already denied camera permissions and wish to use this
+					app again.
+				</p>
+			</div>
+		{/if}
+	</div>
 	{#if scanning}
 		<button on:click|once={stopScanning}>Stop Scanning</button>
 	{:else}
@@ -55,6 +66,32 @@
 	}
 	#reader {
 		width: 100%;
+		aspect-ratio: 1;
+	}
+	.instructions {
+		width: 80%;
+		height: 80%;
+		padding: 10%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.instructions h1 {
+		color: black;
+		font-size: 16px;
+		font-family: Poppins;
+		font-weight: 500;
+		word-wrap: break-word;
+		text-align: center;
+	}
+	.instructions p {
+		color: rgba(0, 0, 0, 0.5);
+		font-size: 8px;
+		font-family: Poppins;
+		font-weight: 500;
+		word-wrap: break-word;
+		text-align: center;
 	}
 	button {
 		color: rgba(0, 0, 0, 0.5);

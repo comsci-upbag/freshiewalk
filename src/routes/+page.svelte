@@ -45,7 +45,7 @@
 
 <style>
 	.container {
-		height: 100vh;
+		height: calc(100vh - 50px);
 		width: 100vw;
 		display: inline-flex;
 		flex-direction: column;
